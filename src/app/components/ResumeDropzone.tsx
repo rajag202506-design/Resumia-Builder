@@ -97,8 +97,8 @@ export const ResumeDropzone = ({
   return (
     <div
       className={cx(
-        "flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 ",
-        isHoveredOnDropzone && "border-sky-400",
+        "flex justify-center rounded-2xl border-2 border-dashed border-white/30 px-6 hover:border-yellow-400/60 transition-colors",
+        isHoveredOnDropzone && "border-yellow-400",
         playgroundView ? "pb-6 pt-4" : "py-12",
         className
       )}
@@ -128,25 +128,25 @@ export const ResumeDropzone = ({
           <>
             <p
               className={cx(
-                "pt-3 text-gray-700",
+                "pt-3 text-white/90",
                 !playgroundView && "text-lg font-semibold"
               )}
             >
               Browse a pdf file or drop it here
             </p>
-            <p className="flex text-sm text-gray-500">
-              <LockClosedIcon className="mr-1 mt-1 h-3 w-3 text-gray-400" />
+            <p className="flex text-sm text-white/60 justify-center">
+              <LockClosedIcon className="mr-1 mt-1 h-3 w-3 text-white/40" />
               File data is used locally and never leaves your browser
             </p>
           </>
         ) : (
           <div className="flex items-center justify-center gap-3 pt-3">
-            <div className="pl-7 font-semibold text-gray-900">
+            <div className="pl-7 font-semibold text-white">
               {file.name} - {getFileSizeString(file.size)}
             </div>
             <button
               type="button"
-              className="outline-theme-blue rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-500"
+              className="outline-theme-blue rounded-md p-1 text-white/60 hover:bg-white/10 hover:text-white"
               title="Remove file"
               onClick={onRemove}
             >
@@ -159,8 +159,8 @@ export const ResumeDropzone = ({
             <>
               <label
                 className={cx(
-                  "within-outline-theme-purple cursor-pointer rounded-full px-6 pb-2.5 pt-2 font-semibold shadow-sm",
-                  playgroundView ? "border" : "bg-primary"
+                  "within-outline-theme-purple cursor-pointer rounded-2xl px-8 py-3 font-bold shadow-lg transition-all hover:scale-105",
+                  playgroundView ? "border border-white/30 text-white" : "bg-white text-indigo-600"
                 )}
               >
                 Browse file
@@ -186,7 +186,7 @@ export const ResumeDropzone = ({
                   Import and Continue <span aria-hidden="true">→</span>
                 </button>
               )}
-              <p className={cx(" text-gray-500", !playgroundView && "mt-6")}>
+              <p className={cx("text-white/60 text-sm", !playgroundView && "mt-6")}>
                 Note: {!playgroundView ? "Import" : "Parser"} works best on
                 single column resume
               </p>

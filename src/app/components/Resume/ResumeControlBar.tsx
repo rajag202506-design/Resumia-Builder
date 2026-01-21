@@ -82,5 +82,5 @@ export const ResumeControlBarCSR = dynamic(
 );
 
 export const ResumeControlBarBorder = () => (
-  <div className="absolute bottom-[var(--resume-control-bar-height)] w-full border-t-2 bg-gray-50" />
+  <div className="absolute bottom-[var(--resume-control-bar-height)] w-full" />
 );

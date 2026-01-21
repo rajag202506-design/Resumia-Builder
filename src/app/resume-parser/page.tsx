@@ -52,7 +52,7 @@ export default function ResumeParser() {
   }, [fileUrl]);
 
   return (
-    <main className="h-full w-full overflow-hidden">
+    <main className="h-full w-full overflow-hidden gradient-bg">
       <div className="grid md:grid-cols-6">
         <div className="flex justify-center px-2 md:col-span-3 md:h-[calc(100vh-var(--top-nav-bar-height))] md:justify-end">
           <section className="mt-5 grow px-4 md:max-w-[600px] md:px-0">
@@ -62,7 +62,7 @@ export default function ResumeParser() {
           </section>
           <FlexboxSpacer maxWidth={45} className="hidden md:block" />
         </div>
-        <div className="flex px-6 text-gray-900 md:col-span-3 md:h-[calc(100vh-var(--top-nav-bar-height))] md:overflow-y-scroll">
+        <div className="flex px-6 text-white md:col-span-3 md:h-[calc(100vh-var(--top-nav-bar-height))] md:overflow-y-scroll">
           <FlexboxSpacer maxWidth={45} className="hidden md:block" />
           <section className="max-w-[600px] grow">
             <Heading className="text-primary !mt-4">
@@ -78,10 +78,10 @@ export default function ResumeParser() {
                 <article
                   key={idx}
                   className={cx(
-                    "flex-1 cursor-pointer rounded-md border-2 px-4 py-3 shadow-sm outline-none hover:bg-gray-50 focus:bg-gray-50",
+                    "flex-1 cursor-pointer rounded-xl border-2 px-4 py-3 shadow-lg outline-none hover:bg-white/10 focus:bg-white/10 transition-colors",
                     example.fileUrl === fileUrl
-                      ? "border-blue-400"
-                      : "border-gray-300"
+                      ? "border-yellow-400 bg-white/5"
+                      : "border-white/30"
                   )}
                   onClick={() => setFileUrl(example.fileUrl)}
                   onKeyDown={(e) => {
@@ -90,8 +90,8 @@ export default function ResumeParser() {
                   }}
                   tabIndex={0}
                 >
-                  <h1 className="font-semibold">Resume Example {idx + 1}</h1>
-                  <p className="mt-2 text-sm text-gray-500">
+                  <h1 className="font-semibold text-white">Resume Example {idx + 1}</h1>
+                  <p className="mt-2 text-sm text-white/70">
                     {example.description}
                   </p>
                 </article>

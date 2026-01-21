@@ -16,11 +16,11 @@ export default function ImportResume() {
   }, []);
 
   return (
-    <main>
-      <div className="mx-auto mt-14 max-w-3xl rounded-md border border-gray-200 px-10 py-10 text-center shadow-md">
+    <main className="min-h-screen gradient-bg py-16 px-4">
+      <div className="mx-auto mt-14 max-w-3xl rounded-2xl glass px-10 py-10 text-center shadow-2xl">
         {!hasUsedAppBefore ? (
           <>
-            <h1 className="text-lg font-semibold text-gray-900">
+            <h1 className="text-2xl font-bold text-white mb-2">
               Import data from an existing resume
             </h1>
             <ResumeDropzone
@@ -48,7 +48,7 @@ export default function ImportResume() {
                 <OrDivider />
               </>
             )}
-            <h1 className="font-semibold text-gray-900">
+            <h1 className="text-2xl font-bold text-white mb-2">
               Override data with a new resume
             </h1>
             <ResumeDropzone
@@ -64,9 +64,9 @@ export default function ImportResume() {
 
 const OrDivider = () => (
   <div className="mx-[-2.5rem] flex items-center pb-6 pt-8" aria-hidden="true">
-    <div className="flex-grow border-t border-gray-200" />
-    <span className="mx-2 mt-[-2px] flex-shrink text-lg text-gray-400">or</span>
-    <div className="flex-grow border-t border-gray-200" />
+    <div className="flex-grow border-t border-white/20" />
+    <span className="mx-2 mt-[-2px] flex-shrink text-lg text-white/60">or</span>
+    <div className="flex-grow border-t border-white/20" />
   </div>
 );
 
@@ -79,13 +79,14 @@ const SectionWithHeadingAndCreateButton = ({
 }) => {
   return (
     <>
-      <p className="font-semibold text-gray-900">{heading}</p>
+      <p className="font-semibold text-white/90 text-lg">{heading}</p>
       <div className="mt-5">
         <Link
           href="/resume-builder"
-          className="outline-theme-blue rounded-full bg-sky-500 px-6 pb-2 pt-1.5 text-base font-semibold text-white"
+          className="btn-primary group relative"
         >
-          {buttonText}
+          <span className="relative z-10">{buttonText}</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
         </Link>
       </div>
     </>
