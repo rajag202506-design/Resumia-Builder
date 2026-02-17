@@ -9,10 +9,8 @@ export const TopNavBar = () => {
   const pathName = usePathname();
   const router = useRouter();
   const isHomePage = pathName === "/";
-  const isFromResumia = typeof window !== 'undefined' && document.referrer.includes('localhost:3000');
-
   const handleBackToResumia = () => {
-    window.location.href = 'http://localhost:3000';
+    window.location.href = 'https://resumia.online';
   };
 
   return (
@@ -22,8 +20,7 @@ export const TopNavBar = () => {
     >
       <div className="flex h-10 w-full items-center justify-between">
         <div className="flex items-center gap-4">
-          {isFromResumia && (
-            <button
+          <button
               onClick={handleBackToResumia}
               className="flex items-center gap-2 px-4 py-2 glass rounded-xl text-white hover:bg-white/20 transition-colors"
               aria-label="Back to Resumia"
@@ -33,7 +30,6 @@ export const TopNavBar = () => {
               </svg>
               <span className="hidden sm:inline text-sm font-medium">Back to Resumia</span>
             </button>
-          )}
           <Link href="/">
             <span className="sr-only">Resumia Builder</span>
             <Image
